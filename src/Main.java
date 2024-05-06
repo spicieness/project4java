@@ -14,8 +14,8 @@ public class Main {
     public static  ArrayList<Task> myTasks = new ArrayList<>();
     public static void main(String[] args){
 
+        deserialize();
         try {
-
             Scanner input = new Scanner(System.in);
 
             String menuNum = "";
@@ -36,7 +36,6 @@ public class Main {
                     case "1":
                         System.out.println("What task would you like to add? (Type a task)");
                         addTask(myTasks);
-                        serialize();
                         System.out.println(myTasks);
                         break;
                     case "2":
@@ -75,12 +74,10 @@ public class Main {
                                 System.out.println(myTasks.get(i));
                             }
                         }
-                        break;
-                    case "6":
-                        deserialize();
-
                 }
             }
+
+            serialize();
 
             System.out.println();
             System.out.println("Here are your final tasks:");
